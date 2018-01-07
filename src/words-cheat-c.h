@@ -6,8 +6,8 @@
 int strchrcnt(const char *haystack, const char needle) {
 	int count = 0;
 	char *pos;
-		while((pos = strchr(haystack, needle)) != NULL && strlen(haystack) > 0) {
-			count++, haystack = pos + 1;
+	while((pos = strchr(haystack, needle)) != NULL && strlen(haystack) > 0) {
+		count++, haystack = pos + 1;
 	}
 	return count;
 }
