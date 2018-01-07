@@ -1,5 +1,8 @@
 # Flags
-CFLAGS = -std=c99 -pedantic -O1 -Wall -Werror
+CFLAGS = -std=c99 -pedantic -O3 -Wall -Werror -march=native -flto -pipe -fstack-protector-strong --param=ssp-buffer-size=4
+CXXFLAGS = -march=native -O3 -flto -pipe -fstack-protector-strong --param=ssp-buffer-size=4
+LDFLAGS = -Wl -O3 -flto
+
 DEBUG = false
 DEBUG_FLAGS =
 ifeq ($(DEBUG), true)
