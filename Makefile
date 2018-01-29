@@ -7,14 +7,14 @@ endif
 #uncomment below if shared library target
 #CFLAGS += -shared -undefined dynamic_lookup
 
-TARGET_EXEC = words-cheat-c
+TARGET_EXEC = words-cheat
 TEST_EXEC = test
 BUILD_DIR = build
 SRC_DIRS = src
 
 ALL_SRCS := $(shell find $(SRC_DIRS) -name *.cpp -or -name *.c -or -name *.s)
 MAIN_SRCS := $(shell find $(SRC_DIRS) \( -not -name test.c \) -and \( -name *.cpp -or -name *.c -or -name *.s \) )
-TEST_SRCS := $(shell find $(SRC_DIRS) \( -not -name words-cheat-c.c \) -and \( -name *.cpp -or -name *.c -or -name *.s \) )
+TEST_SRCS := $(shell find $(SRC_DIRS) \( -not -name words-cheat.c \) -and \( -name *.cpp -or -name *.c -or -name *.s \) )
 ALL_OBJS := $(ALL_SRCS:%=$(BUILD_DIR)/%.o)
 MAIN_OBJS := $(MAIN_SRCS:%=$(BUILD_DIR)/%.o)
 TEST_OBJS := $(TEST_SRCS:%=$(BUILD_DIR)/%.o)
@@ -66,7 +66,7 @@ clean:
 all:	$(BUILD_DIR)/$(TEST_EXEC) $(BUILD_DIR)/$(TARGET_EXEC)
 
 run: $(BUILD_DIR)/$(TARGET_EXEC)
-	./build/words-cheat-c
+	./build/words-cheat
 
 test: $(BUILD_DIR)/$(TEST_EXEC)
 	./build/test

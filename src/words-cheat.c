@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdbool.h>
 #include <stdlib.h>
-#include "words-cheat-c.h"
+#include "words-cheat.h"
 
 int main(int argc, char **argv) {
 	if (argc != 4) {
