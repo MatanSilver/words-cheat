@@ -5,7 +5,7 @@
 #include "words-cheat.h"
 
 int main(int argc, char **argv) {
-	if (argc != 4) {
+	if (!validate_invocation(argc, argv)) {
 		printf("ERROR: use invocation [binary] [character list] [minimum characters] [keep/throw]\n");
 		exit(EXIT_FAILURE);
 	}

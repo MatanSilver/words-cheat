@@ -24,3 +24,21 @@ bool is_possible(char *word, char *chars, size_t minimum, bool throw) {
 	}
 	return true;
 }
+
+bool validate_invocation(int argc, char ** argv) {
+	if (argc != 4) {
+		printf("fail 1\n");
+		return false;
+	}
+	for (size_t i = 0; i < strlen(argv[2]); i++) {
+		if ((argv[2][i] < 48) || (argv[2][i] > 57)) {
+			printf("fail 2\n");
+			return false;
+		}
+	}
+	if (strcmp(argv[3], "throw") != 0 && strcmp(argv[3], "keep") != 0) {
+		printf("fail 3\n");
+		return false;
+	}
+	return true;
+}
