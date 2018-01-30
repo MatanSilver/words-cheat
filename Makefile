@@ -58,7 +58,7 @@ $(BUILD_DIR)/%.cpp.o: %.cpp
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(DEBUG_FLAGS) -c $< -o $@
 
 
-.PHONY: clean all test run install uninstall
+.PHONY: clean all test run install uninstall bench
 
 clean:
 	$(RM) -r $(BUILD_DIR)
@@ -66,7 +66,7 @@ clean:
 all:	$(BUILD_DIR)/$(TEST_EXEC) $(BUILD_DIR)/$(TARGET_EXEC)
 
 run: $(BUILD_DIR)/$(TARGET_EXEC)
-	./build/words-cheat
+	$(BUILD_DIR)/$(TARGET_EXEC) thisisatest 4 keep
 
 test: $(BUILD_DIR)/$(TEST_EXEC)
 	./build/test
@@ -76,6 +76,14 @@ install: $(BUILD_DIR)/$(TARGET_EXEC)
 
 uninstall:
 	rm /usr/local/bin/$(TARGET_EXEC)
+
+bench:
+	time $(BUILD_DIR)/$(TARGET_EXEC) thisisatest 4 keep > /dev/null
+	time $(BUILD_DIR)/$(TARGET_EXEC) thisisatest 4 keep > /dev/null
+	time $(BUILD_DIR)/$(TARGET_EXEC) thisisatest 4 keep > /dev/null
+	time $(BUILD_DIR)/$(TARGET_EXEC) thisisatest 4 keep > /dev/null
+
+
 
 -include $(DEPS)
 
