@@ -69,7 +69,7 @@ run: $(BUILD_DIR)/$(TARGET_EXEC)
 	$(BUILD_DIR)/$(TARGET_EXEC) thisisatest 4 keep
 
 test: $(BUILD_DIR)/$(TEST_EXEC)
-	./build/test
+	$(BUILD_DIR)/test
 
 install: $(BUILD_DIR)/$(TARGET_EXEC)
 	cp $(BUILD_DIR)/$(TARGET_EXEC) /usr/local/bin/$(TARGET_EXEC)
