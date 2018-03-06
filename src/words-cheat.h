@@ -14,9 +14,9 @@ int strchrcnt(const char *haystack, const char needle) {
 
 bool is_possible(char *word, char *chars, size_t minimum, bool throw) {
 	size_t wordlen = strlen(word);
+	if (wordlen < minimum) return false;
 	int wordcnt, charscnt;
 	for (size_t i = 0; i < wordlen; i++) {
-		if (wordlen < minimum) return false;
 		charscnt = strchrcnt(chars, word[i]);
 		wordcnt = strchrcnt(word, word[i]);
 		if (throw && wordcnt > charscnt) return false;
