@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdbool.h>
 #include <stdlib.h>
+#include "util.h"
 
 int strchrcnt(const char *haystack, const char needle) {
 	int count = 0;

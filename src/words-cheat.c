@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdbool.h>
 #include <stdlib.h>
-#include "words-cheat.h"
+#include "util.h"
 
 int main(int argc, char **argv) {
 	if (!validate_invocation(argc, argv)) {

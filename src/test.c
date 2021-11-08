@@ -1,5 +1,5 @@
 #include "test.h"
-#include "words-cheat.h"
+#include "util.h"
 
 int main(int argc, char **argv) {
 	assert_err_list_t *assert_err_list = assert_err_list_new();
